@@ -1,63 +1,740 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>ChessVerse Bangladesh</title>
 
 <style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
-margin:0;
-font-family:Arial,sans-serif;
+    background:#0b1120;
+    color:white;
+    line-height:1.6;
+}
+
+
+/* Navigation */
+
+nav{
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#111827;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+    color:#facc15;
+}
+
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+
+.nav-links a:hover{
+    color:#facc15;
+}
+
+
+/* Hero */
+
+
+.hero{
+
+    min-height:90vh;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:80px 8%;
+
+    background:
+    linear-gradient(
+    135deg,
+    #111827,
+    #1e293b
+    );
+
+}
+
+
+.hero-text{
+    width:50%;
+}
+
+
+.hero-text h1{
+
+    font-size:55px;
+    line-height:1.2;
+    margin-bottom:20px;
+
+}
+
+
+.hero-text span{
+
+    color:#facc15;
+
+}
+
+
+.hero-text p{
+
+    font-size:18px;
+    color:#cbd5e1;
+    margin-bottom:30px;
+
+}
+
+
+.btn{
+
+    display:inline-block;
+    padding:14px 30px;
+
+    background:#facc15;
+    color:#111827;
+
+    text-decoration:none;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/* Chess Icon */
+
+
+.hero-image{
+
+    width:40%;
+    text-align:center;
+
+}
+
+
+.chess-piece{
+
+    font-size:180px;
+
+    animation:float 3s infinite;
+
+}
+
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+
+/* Sections */
+
+
+section{
+
+    padding:80px 8%;
+
+}
+
+
+.section-title{
+
+    text-align:center;
+
+    font-size:38px;
+
+    margin-bottom:50px;
+
+}
+
+
+/* Cards */
+
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:25px;
+
+}
+
+
+
+.card{
+
 background:#111827;
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
+
+padding:30px;
+
+border-radius:20px;
+
+transition:.3s;
+
+border:1px solid #1f2937;
+
+}
+
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+
+.card h3{
+
+color:#facc15;
+
+margin-bottom:15px;
+
+}
+
+
+.card p{
+
+color:#cbd5e1;
+
+}
+
+
+/* About */
+
+
+.about{
+
+background:#111827;
+
+}
+
+
+.about-box{
+
+max-width:800px;
+
+margin:auto;
+
 text-align:center;
-}
 
-h1{
-font-size:50px;
-margin-bottom:10px;
-}
-
-p{
-font-size:20px;
-color:#cccccc;
-}
-
-button{
-margin-top:20px;
-padding:15px 30px;
 font-size:18px;
-border:none;
-border-radius:10px;
-background:#22c55e;
-color:white;
-cursor:pointer;
+
+color:#cbd5e1;
+
 }
 
-button:hover{
-background:#16a34a;
-}
+
+
+/* Continue in Part 2 */
+
 </style>
 
 </head>
 
+
 <body>
 
-<div>
-<h1>♟️ ChessVerse Bangladesh</h1>
 
-<p>The Future of Chess Learning.</p>
+<nav>
 
-<p>Website is under development.</p>
+<div class="logo">
+♟️ ChessVerse Bangladesh
+</div>
 
-<button>Coming Soon</button>
+
+<div class="nav-links">
+
+<a href="#home">হোম</a>
+
+<a href="#features">ফিচার</a>
+
+<a href="#about">আমাদের সম্পর্কে</a>
+
+<a href="#contact">যোগাযোগ</a>
 
 </div>
 
+
+</nav>
+
+
+
+<section class="hero" id="home">
+
+
+<div class="hero-text">
+
+
+<h1>
+
+বাংলাদেশের জন্য
+<span>ChessVerse</span>
+
+</h1>
+
+
+<p>
+
+দাবা শেখা, খেলা এবং দাবাপ্রেমীদের
+একটি আধুনিক প্ল্যাটফর্ম।
+
+</p>
+
+
+<a class="btn" href="#features">
+শুরু করুন
+</a>
+
+
+</div>
+
+
+
+<div class="hero-image">
+
+
+<div class="chess-piece">
+♟️
+</div>
+
+
+</div>
+
+
+</section>
+ <section id="features">
+
+
+<h2 class="section-title">
+আমাদের ফিচার
+</h2>
+
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+♟️ Chess Learning
+</h3>
+
+<p>
+
+শূন্য থেকে শুরু করে ধাপে ধাপে
+দাবা শেখার সুযোগ।
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🏆 Tournament
+</h3>
+
+<p>
+
+বন্ধুদের সাথে প্রতিযোগিতা এবং
+নিজের দক্ষতা উন্নত করুন।
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+👥 Community
+</h3>
+
+<p>
+
+বাংলাদেশের দাবাপ্রেমীদের সাথে
+যুক্ত হোন।
+
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+<section class="about" id="about">
+
+
+<h2 class="section-title">
+ChessVerse সম্পর্কে
+</h2>
+
+
+<div class="about-box">
+
+
+<p>
+
+ChessVerse Bangladesh একটি আধুনিক
+দাবা প্ল্যাটফর্ম যেখানে শেখা,
+অনুশীলন এবং প্রতিযোগিতার মাধ্যমে
+একজন খেলোয়াড় নিজের উন্নতি করতে পারে।
+
+</p>
+
+
+<br>
+
+
+<p>
+
+আমাদের লক্ষ্য হলো বাংলাদেশে
+দাবাকে আরও জনপ্রিয় করা এবং
+নতুন খেলোয়াড় তৈরি করা।
+
+</p>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<section id="contact">
+
+
+<h2 class="section-title">
+
+যোগাযোগ
+
+</h2>
+
+
+
+<div class="cards">
+
+
+
+<div class="card">
+
+<h3>
+📧 Email
+</h3>
+
+
+<p>
+contact@chessversebd.com
+</p>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+🌐 Website
+</h3>
+
+
+<p>
+ChessVerse Bangladesh
+</p>
+
+
+</div>
+
+
+
+
+<div class="card">
+
+<h3>
+🇧🇩 Location
+</h3>
+
+
+<p>
+Bangladesh
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 ChessVerse Bangladesh | All Rights Reserved
+
+</p>
+
+
+</footer>
+
+
+
+
+
+<style>
+
+
+footer{
+
+background:#020617;
+
+padding:30px;
+
+text-align:center;
+
+color:#94a3b8;
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+
+.hero{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+
+
+.hero-text{
+
+width:100%;
+
+}
+
+
+
+.hero-text h1{
+
+font-size:40px;
+
+}
+
+
+
+.hero-image{
+
+width:100%;
+
+margin-top:40px;
+
+}
+
+
+
+.cards{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.nav-links{
+
+display:none;
+
+}
+
+
+
+.logo{
+
+font-size:20px;
+
+}
+
+
+
+}
+
+
+
+</style>
+
+
+
 </body>
-</html>
+
+<!-- Extra Enhancement Section -->
+
+<section>
+
+<h2 class="section-title">
+কেন ChessVerse?
+</h2>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<h3>
+🧠 উন্নত চিন্তাশক্তি
+</h3>
+
+<p>
+
+দাবা আপনার পরিকল্পনা, সিদ্ধান্ত নেওয়া
+এবং বিশ্লেষণ ক্ষমতা উন্নত করে।
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+🚀 Skill Growth
+</h3>
+
+<p>
+
+নিয়মিত অনুশীলনের মাধ্যমে
+নিজের খেলাকে আরও শক্তিশালী করুন।
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>
+⭐ Future Champion
+</h3>
+
+<p>
+
+আজকের অনুশীলন থেকেই তৈরি হবে
+আগামীর দাবা খেলোয়াড়।
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+// Simple welcome message
+
+console.log(
+"Welcome to ChessVerse Bangladesh ♟️"
+);
+
+
+
+</script>
+
+</html>  
