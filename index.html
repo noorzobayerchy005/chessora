@@ -1,789 +1,290 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta name="theme-color" content="#0b1120">
-    <meta name="google-site-verification" content="EjfblrSz1-YhK6fp_Pny9QvMRzUDnretd2lIq2sBF0I" />
-    <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ChessVerse Bangladesh | Learn Chess in Bangla</title>
-<meta name="description" content="ChessVerse Bangladesh হলো বাংলা ভাষায় দাবা শেখা, অনুশীলন, কৌশল এবং দাবা কমিউনিটির একটি আধুনিক প্ল্যাটফর্ম।">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071426">
+<meta name="google-site-verification" content="EjfblrSz1-YhK6fp_Pny9QvMRzUDnretd2lIq2sBF0I">
+<title>CHESSORA — Bangladesh Chess Network</title>
+<meta name="description" content="CHESSORA — Bangladesh Chess Network. দাবা শেখা, পাজল সমাধান, অনুশীলন এবং বাংলাদেশের দাবাপ্রেমীদের কমিউনিটি।">
+<meta property="og:title" content="CHESSORA — Bangladesh Chess Network">
+<meta property="og:description" content="Learn, solve, play and grow together with CHESSORA.">
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: "Segoe UI", sans-serif;
+:root{
+  --navy:#071426;
+  --panel:#10253d;
+  --cyan:#29d9f5;
+  --white:#f5fbff;
+  --muted:#b4c5d6;
+  --line:#294057;
 }
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
 body{
-    background:#0b1120;
-    color:white;
-    line-height:1.6;
+  font-family:"Noto Sans Bengali","Segoe UI",sans-serif;
+  color:var(--white);background:var(--navy);line-height:1.75
 }
-
-
-/* Navigation */
-
+a{color:inherit}
+.container{width:min(1120px,90%);margin:auto}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(7,20,38,.97);border-bottom:1px solid var(--line)
+}
 nav{
-    width:100%;
-    padding:20px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background:#111827;
-    position:sticky;
-    top:0;
-    z-index:100;
+  min-height:78px;display:flex;justify-content:space-between;
+  align-items:center;gap:20px
 }
-
-
-.logo{
-    font-size:25px;
-    font-weight:bold;
-    color:#facc15;
+.brand{text-decoration:none;font-size:1.5rem;font-weight:900;letter-spacing:2px}
+.brand small{display:block;color:var(--cyan);font-size:.62rem;letter-spacing:1.5px}
+.links{display:flex;gap:22px}
+.links a{text-decoration:none;color:var(--muted);font-size:.92rem}
+.links a:hover{color:var(--cyan)}
+.menu{
+  display:none;background:transparent;color:white;
+  border:1px solid var(--line);border-radius:9px;padding:7px 12px;font-size:20px
 }
-
-
-.nav-links{
-    display:flex;
-    gap:25px;
-}
-
-
-.nav-links a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-
-.nav-links a:hover{
-    color:#facc15;
-}
-
-
-/* Hero */
-
-
-.hero{
-
-    min-height:90vh;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    padding:80px 8%;
-
-    background:
-    linear-gradient(
-    135deg,
-    #111827,
-    #1e293b
-    );
-
-}
-
-
-.hero-text{
-    width:50%;
-}
-
-
-.hero-text h1{
-
-    font-size:55px;
-    line-height:1.2;
-    margin-bottom:20px;
-
-}
-
-
-.hero-text span{
-
-    color:#facc15;
-
-}
-
-
-.hero-text p{
-
-    font-size:18px;
-    color:#cbd5e1;
-    margin-bottom:30px;
-
-}
-
-
 .btn{
-
-    display:inline-block;
-    padding:14px 30px;
-
-    background:#facc15;
-    color:#111827;
-
-    text-decoration:none;
-
-    border-radius:30px;
-
-    font-weight:bold;
-
-    transition:.3s;
-
+  display:inline-block;padding:12px 21px;border-radius:30px;
+  text-decoration:none;font-weight:800;transition:.2s
 }
-
-
-.btn:hover{
-
-    transform:translateY(-5px);
-
+.btn:hover{transform:translateY(-2px)}
+.primary{background:var(--cyan);color:#03080e}
+.secondary{border:1px solid #456178;color:var(--white)}
+.hero{
+  padding:80px 0;
+  background:radial-gradient(ellipse at 80% 20%,#12364a 0%,var(--navy) 55%)
 }
-
-
-/* Chess Icon */
-
-
-.hero-image{
-
-    width:40%;
-    text-align:center;
-
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:45px}
+.eyebrow{color:var(--cyan);font-weight:800;font-size:.8rem;letter-spacing:2px;margin-bottom:16px}
+h1{font-size:clamp(2.7rem,5.5vw,4.6rem);line-height:1.18;margin-bottom:22px}
+.accent{color:var(--cyan)}
+.intro{font-size:1.08rem;color:var(--muted);margin-bottom:28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.note{margin-top:20px;color:#8ea7bb;font-size:.88rem}
+.board-panel{
+  min-height:390px;position:relative;display:grid;place-items:center;
+  border:1px solid #24465b;border-radius:25px;
+  background:radial-gradient(circle,#12364a,var(--navy) 72%)
 }
-
-
-.chess-piece{
-
-    font-size:180px;
-
-    animation:float 3s infinite;
-
+.board{
+  width:min(76%,300px);display:grid;
+  grid-template-columns:repeat(8,1fr);
+  border:6px solid #030a12;transform:rotate(-3deg);
+  box-shadow:0 20px 55px #0008
 }
-
-
-@keyframes float{
-
-0%{
-transform:translateY(0);
+.square{aspect-ratio:1;display:grid;place-items:center;font-size:clamp(15px,3vw,30px);line-height:1}
+.light{background:#d9f5fa;color:#071426}
+.dark{background:#17637b;color:#fff}
+.float{
+  position:absolute;padding:9px 12px;background:#071426;
+  border:1px solid var(--line);border-radius:10px;font-size:.78rem
 }
-
-50%{
-transform:translateY(-20px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-
-
-/* Sections */
-
-
-section{
-
-    padding:80px 8%;
-
-}
-
-
-.section-title{
-
-    text-align:center;
-
-    font-size:38px;
-
-    margin-bottom:50px;
-
-}
-
-
-/* Cards */
-
-
-.cards{
-
-display:grid;
-
-grid-template-columns:
-repeat(3,1fr);
-
-gap:25px;
-
-}
-
-
-
+.float strong{display:block;color:var(--cyan);font-size:.65rem;letter-spacing:1px}
+.float.top{right:12px;top:15px}
+.float.bottom{left:12px;bottom:15px}
+section.content{padding:76px 0}
+.soft{background:#0b1b2d;border-block:1px solid var(--line)}
+.heading{text-align:center;max-width:720px;margin:0 auto 38px}
+.kicker{color:var(--cyan);font-size:.78rem;font-weight:900;letter-spacing:2px;margin-bottom:10px}
+h2{font-size:clamp(2rem,4vw,2.9rem);line-height:1.3;margin-bottom:12px}
+.heading p,.card p,.about-copy p,.cta p{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .card{
-
-background:#111827;
-
-padding:30px;
-
-border-radius:20px;
-
-transition:.3s;
-
-border:1px solid #1f2937;
-
+  padding:25px;background:linear-gradient(145deg,#10253d,#0a1929);
+  border:1px solid var(--line);border-radius:18px;transition:.2s
 }
-
-
-.card:hover{
-
-transform:translateY(-10px);
-
+.card:hover{border-color:#27839a;transform:translateY(-4px)}
+.symbol{font-size:1.8rem;color:var(--cyan);margin-bottom:10px}
+.card h3{margin-bottom:8px;font-size:1.15rem}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:center}
+.brand-panel{
+  text-align:center;padding:55px 15px;
+  background:radial-gradient(circle,#12364a,var(--panel) 75%);
+  border:1px solid #24465b;border-radius:22px
 }
-
-
-.card h3{
-
-color:#facc15;
-
-margin-bottom:15px;
-
+.brand-panel strong{font-size:2rem;letter-spacing:3px}
+.brand-panel p{color:var(--cyan);font-size:.72rem;letter-spacing:1px}
+.about-copy p{margin-bottom:15px}
+.cta{
+  display:flex;align-items:center;justify-content:space-between;gap:25px;
+  padding:30px;background:linear-gradient(110deg,#103248,#10253d);
+  border:1px solid #245065;border-radius:22px
 }
-
-
-.card p{
-
-color:#cbd5e1;
-
+.cta p{margin-top:8px}
+.card a{color:var(--muted);overflow-wrap:anywhere}
+.card a:hover{color:var(--cyan)}
+footer{border-top:1px solid var(--line);padding:25px 0;color:#9ab0c2;font-size:.85rem}
+.footer-inner{display:flex;justify-content:space-between;gap:18px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+@media(max-width:850px){
+  .hero-grid,.about-grid{grid-template-columns:1fr}
+  .hero-grid{gap:35px}
+  .links{
+    display:none;position:absolute;top:78px;left:0;right:0;
+    flex-direction:column;gap:16px;padding:20px 5%;
+    background:var(--navy);border-bottom:1px solid var(--line)
+  }
+  .links.open{display:flex}
+  .menu{display:block}
+  .nav-cta{display:none}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .board-panel{min-height:340px}
 }
-
-
-/* About */
-
-
-.about{
-
-background:#111827;
-
+@media(max-width:560px){
+  .hero{padding:55px 0}
+  .grid{grid-template-columns:1fr}
+  .actions{flex-direction:column}
+  .actions .btn{text-align:center}
+  section.content{padding:60px 0}
+  .cta,.footer-inner{flex-direction:column;align-items:flex-start}
+  .cta .btn{width:100%;text-align:center}
+  .board-panel{min-height:310px}
+  .brand{font-size:1.25rem}
 }
-
-
-.about-box{
-
-max-width:800px;
-
-margin:auto;
-
-text-align:center;
-
-font-size:18px;
-
-color:#cbd5e1;
-
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
 }
-
-
-
-/* Continue in Part 2 */
-
 </style>
-
 </head>
-
-
 <body>
-
-
-<nav>
-
-<div class="logo">
-♟️ ChessVerse Bangladesh
-</div>
-
-
-<div class="nav-links">
-
+<header>
+<nav class="container" aria-label="প্রধান নেভিগেশন">
+<a class="brand" href="#home">CHESSORA
+<small>BANGLADESH CHESS NETWORK</small></a>
+<div class="links" id="navLinks">
 <a href="#home">হোম</a>
-
-<a href="#features">ফিচার</a>
-
+<a href="#activities">কার্যক্রম</a>
 <a href="#about">আমাদের সম্পর্কে</a>
-
 <a href="#contact">যোগাযোগ</a>
-
 </div>
-
-
+<a class="btn primary nav-cta" href="https://www.facebook.com/share/g/18sv1ouSJR/" target="_blank" rel="noopener noreferrer">কমিউনিটিতে যোগ দিন ↗</a>
+<button class="menu" id="menuToggle" type="button" aria-label="মেনু খুলুন" aria-expanded="false">☰</button>
 </nav>
+</header>
 
-
-
+<main>
 <section class="hero" id="home">
-
-
-<div class="hero-text">
-
-
-<h1>
-
-বাংলাদেশের জন্য
-<span>ChessVerse</span>
-
-</h1>
-
-
-<p>
-
-দাবা শেখা, খেলা এবং দাবাপ্রেমীদের
-একটি আধুনিক প্ল্যাটফর্ম।
-
-</p>
-
-
-<a class="btn" href="#features">
-শুরু করুন
-</a>
-
-
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">BANGLADESH CHESS NETWORK</div>
+<h1>দাবার পরের চাল,<br><span class="accent">একসাথে এগিয়ে</span></h1>
+<p class="intro">CHESSORA হলো বাংলাদেশের দাবাপ্রেমীদের জন্য শেখা, দাবার পাজল সমাধান, অনুশীলন এবং একে অন্যের সঙ্গে যুক্ত হওয়ার একটি কমিউনিটি। নতুন কিংবা অভিজ্ঞ—দাবার যাত্রায় সবাই স্বাগতম।</p>
+<div class="actions">
+<a class="btn primary" href="https://www.facebook.com/share/g/18sv1ouSJR/" target="_blank" rel="noopener noreferrer">♟ Facebook কমিউনিটিতে যোগ দিন</a>
+<a class="btn secondary" href="#activities">আমাদের কার্যক্রম দেখুন ↓</a>
 </div>
-
-
-
-<div class="hero-image">
-
-
-<div class="chess-piece">
-♟️
+<p class="note">শিখুন • ভাবুন • খেলুন • একসাথে উন্নতি করুন</p>
 </div>
-
-
+<div class="board-panel">
+<div class="float top"><strong>THINK AHEAD</strong>পরের চাল ভাবুন</div>
+<div class="board" id="chessboard" aria-hidden="true"></div>
+<div class="float bottom"><strong>CHESSORA COMMUNITY</strong>প্রতিটি চাল গুরুত্বপূর্ণ</div>
 </div>
-
-
-</section>
- <section id="features">
-
-
-<h2 class="section-title">
-আমাদের ফিচার
-</h2>
-
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>
-♟️ Chess Learning
-</h3>
-
-<p>
-
-শূন্য থেকে শুরু করে ধাপে ধাপে
-দাবা শেখার সুযোগ।
-
-</p>
-
 </div>
-
-
-
-<div class="card">
-
-<h3>
-🏆 Tournament
-</h3>
-
-<p>
-
-বন্ধুদের সাথে প্রতিযোগিতা এবং
-নিজের দক্ষতা উন্নত করুন।
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-👥 Community
-</h3>
-
-<p>
-
-বাংলাদেশের দাবাপ্রেমীদের সাথে
-যুক্ত হোন।
-
-</p>
-
-</div>
-
-
-
-</div>
-
-
 </section>
 
-
-
-
-<section class="about" id="about">
-
-
-<h2 class="section-title">
-ChessVerse সম্পর্কে
-</h2>
-
-
-<div class="about-box">
-
-
-<p>
-
-ChessVerse Bangladesh একটি আধুনিক
-দাবা প্ল্যাটফর্ম যেখানে শেখা,
-অনুশীলন এবং প্রতিযোগিতার মাধ্যমে
-একজন খেলোয়াড় নিজের উন্নতি করতে পারে।
-
-</p>
-
-
-<br>
-
-
-<p>
-
-আমাদের লক্ষ্য হলো বাংলাদেশে
-দাবাকে আরও জনপ্রিয় করা এবং
-নতুন খেলোয়াড় তৈরি করা।
-
-</p>
-
-
+<section class="content soft" id="activities">
+<div class="container">
+<div class="heading">
+<div class="kicker">WHAT WE DO</div>
+<h2>দাবার প্রতি ভালোবাসা, <span class="accent">একটি কমিউনিটিতে</span></h2>
+<p>দাবা শেখা ও অনুশীলনের আনন্দ আরও মানুষের কাছে পৌঁছে দেওয়াই আমাদের লক্ষ্য।</p>
 </div>
-
-
+<div class="grid">
+<article class="card"><div class="symbol">♟</div><h3>দাবা শেখা</h3><p>নিয়ম, কৌশল ও পরিকল্পনা শিখুন এবং প্রতিটি খেলায় নিজের দক্ষতা বাড়ান।</p></article>
+<article class="card"><div class="symbol">♞</div><h3>দৈনিক দাবা পাজল</h3><p>দাবার ধাঁধা সমাধান করে কৌশলগত চিন্তা ও বোর্ড দেখার অভ্যাস গড়ে তুলুন।</p></article>
+<article class="card"><div class="symbol">♙</div><h3>দাবা কমিউনিটি</h3><p>বাংলাদেশের দাবাপ্রেমীদের সঙ্গে যুক্ত হোন, আলোচনা করুন ও অভিজ্ঞতা ভাগ করুন।</p></article>
+<article class="card"><div class="symbol">◎</div><h3>অনুশীলন ও উন্নতি</h3><p>নিজের ভুল থেকে শিখুন, চাল বিশ্লেষণ করুন এবং নিয়মিত অনুশীলনে এগিয়ে যান।</p></article>
+<article class="card"><div class="symbol">♜</div><h3>কমিউনিটি আপডেট</h3><p>দাবা-সম্পর্কিত আলোচনা ও কার্যক্রমের জন্য Facebook কমিউনিটির সঙ্গে থাকুন।</p></article>
+<article class="card"><div class="symbol">✦</div><h3>সবার জন্য স্বাগতম</h3><p>আপনি নতুন খেলোয়াড় হোন বা অভিজ্ঞ—দাবা শেখার আগ্রহই এখানে গুরুত্বপূর্ণ।</p></article>
+</div>
+</div>
 </section>
 
-
-
-
-
-<section id="contact">
-
-
-<h2 class="section-title">
-
-যোগাযোগ
-
-</h2>
-
-
-
-<div class="cards">
-
-
-
-<div class="card">
-
-<h3>
-📧 Email
-</h3>
-
-
-<p>
-noorzobayerchy@gmail.com
-</p>
-
-
+<section class="content" id="about">
+<div class="container about-grid">
+<div class="brand-panel">
+<strong>CHESSORA</strong>
+<p>BANGLADESH CHESS NETWORK</p>
 </div>
-
-
-
-
-<div class="card">
-
-<h3>
-🌐 Website
-</h3>
-
-
-<p>
-ChessVerse Bangladesh
-</p>
-
-
+<div class="about-copy">
+<div class="kicker">ABOUT CHESSORA</div>
+<h2>বাংলাদেশে দাবার <span class="accent">সংযোগ আরও শক্তিশালী</span> করি</h2>
+<p>CHESSORA — Bangladesh Chess Network এমন একটি কমিউনিটি, যেখানে দাবাকে ঘিরে শেখা, কৌশল চর্চা এবং পারস্পরিক সহযোগিতাকে গুরুত্ব দেওয়া হয়।</p>
+<p>আমরা চাই আরও বেশি মানুষ দাবার আনন্দ আবিষ্কার করুক, নিয়মিত অনুশীলন করুক এবং একটি ইতিবাচক দাবা পরিবেশের অংশ হোক।</p>
+<a class="btn secondary" href="https://www.facebook.com/share/1Ct5UQ9ULZ/" target="_blank" rel="noopener noreferrer">আমাদের Facebook পেজ দেখুন ↗</a>
 </div>
-
-<div class="card">
-
-<h3>
-📞 Phone
-</h3>
-
-<p>
-01632819847
-</p>
-
 </div>
-
-<div class="card">
-
-<h3>
-📘 Facebook Page
-</h3>
-
-<p>
-
-<a href="https://www.facebook.com/share/1Ct5UQ9ULZ/"
-target="_blank"
-style="color:#facc15; text-decoration:none;">
-
-Visit Page
-
-</a>
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-👥 Facebook Group
-</h3>
-
-<p>
-
-<a href="https://www.facebook.com/share/g/18sv1ouSJR/"
-target="_blank"
-style="color:#facc15; text-decoration:none;">
-
-Join Group
-
-</a>
-
-</p>
-
-</div>
-<div class="card">
-
-<h3>
-🇧🇩 Location
-</h3>
-
-
-<p>
-Bangladesh
-</p>
-
-
-</div>
-
-
-
-</div>
-
-
-
 </section>
 
+<section class="content soft">
+<div class="container cta">
+<div>
+<div class="kicker">YOUR NEXT MOVE</div>
+<h2>আপনার দাবার যাত্রা <span class="accent">এখান থেকেই</span></h2>
+<p>পাজল সমাধান করুন, প্রশ্ন করুন, অন্যদের কাছ থেকে শিখুন—CHESSORA কমিউনিটিতে যুক্ত হোন।</p>
+</div>
+<a class="btn primary" href="https://www.facebook.com/share/g/18sv1ouSJR/" target="_blank" rel="noopener noreferrer">Facebook গ্রুপে যোগ দিন ↗</a>
+</div>
+</section>
 
-
-
+<section class="content" id="contact">
+<div class="container">
+<div class="heading">
+<div class="kicker">GET IN TOUCH</div>
+<h2>যোগাযোগ ও সংযোগ</h2>
+<p>CHESSORA সম্পর্কে জানতে বা কমিউনিটির সঙ্গে যুক্ত হতে নিচের মাধ্যমগুলো ব্যবহার করুন।</p>
+</div>
+<div class="grid">
+<div class="card"><div class="symbol">✉</div><h3>ইমেইল</h3><a href="mailto:noorzobayerchy@gmail.com">noorzobayerchy@gmail.com</a></div>
+<div class="card"><div class="symbol">f</div><h3>Facebook পেজ</h3><a href="https://www.facebook.com/share/1Ct5UQ9ULZ/" target="_blank" rel="noopener noreferrer">পেজ দেখুন ↗</a></div>
+<div class="card"><div class="symbol">♟</div><h3>Facebook কমিউনিটি</h3><a href="https://www.facebook.com/share/g/18sv1ouSJR/" target="_blank" rel="noopener noreferrer">গ্রুপে যোগ দিন ↗</a></div>
+<div class="card"><div class="symbol">☎</div><h3>ফোন</h3><a href="tel:01632819847">01632819847</a></div>
+<div class="card"><div class="symbol">⌖</div><h3>অবস্থান</h3><p>বাংলাদেশ</p></div>
+<div class="card"><div class="symbol">♙</div><h3>CHESSORA</h3><p>Bangladesh Chess Network</p></div>
+</div>
+</div>
+</section>
+</main>
 
 <footer>
-
-
-<p>
-
-© 2026 ChessVerse Bangladesh | All Rights Reserved
-
-</p>
-
-
+<div class="container footer-inner">
+<p><strong>CHESSORA</strong><br>BANGLADESH CHESS NETWORK</p>
+<p>© 2026 CHESSORA. দাবার প্রতি ভালোবাসা, সবার জন্য।</p>
+</div>
 </footer>
 
-
-
-
-
-<style>
-
-
-footer{
-
-background:#020617;
-
-padding:30px;
-
-text-align:center;
-
-color:#94a3b8;
-
-}
-
-
-
-
-@media(max-width:900px){
-
-
-
-.hero{
-
-flex-direction:column;
-
-text-align:center;
-
-}
-
-
-
-.hero-text{
-
-width:100%;
-
-}
-
-
-
-.hero-text h1{
-
-font-size:40px;
-
-}
-
-
-
-.hero-image{
-
-width:100%;
-
-margin-top:40px;
-
-}
-
-
-
-.cards{
-
-grid-template-columns:1fr;
-
-}
-
-
-
-.nav-links{
-
-display:none;
-
-}
-
-
-
-.logo{
-
-font-size:20px;
-
-}
-
-
-
-}
-
-
-
-</style>
-
-
-<!-- Extra Enhancement Section -->
-
-<section>
-
-<h2 class="section-title">
-কেন ChessVerse?
-</h2>
-
-
-<div class="cards">
-
-
-<div class="card">
-
-<h3>
-🧠 উন্নত চিন্তাশক্তি
-</h3>
-
-<p>
-
-দাবা আপনার পরিকল্পনা, সিদ্ধান্ত নেওয়া
-এবং বিশ্লেষণ ক্ষমতা উন্নত করে।
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-🚀 Skill Growth
-</h3>
-
-<p>
-
-নিয়মিত অনুশীলনের মাধ্যমে
-নিজের খেলাকে আরও শক্তিশালী করুন।
-
-</p>
-
-</div>
-
-
-
-<div class="card">
-
-<h3>
-⭐ Future Champion
-</h3>
-
-<p>
-
-আজকের অনুশীলন থেকেই তৈরি হবে
-আগামীর দাবা খেলোয়াড়।
-
-</p>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
 <script>
-
-
-// Simple welcome message
-
-console.log(
-"Welcome to ChessVerse Bangladesh ♟️"
-);
-
-
-
+const board=document.getElementById("chessboard");
+const ranks=[
+["♜","♞","♝","♛","♚","♝","♞","♜"],
+["♟","♟","♟","♟","♟","♟","♟","♟"],
+["","","","","","","",""],
+["","","","","","","",""],
+["","","","","","","",""],
+["","","","","","","",""],
+["♙","♙","♙","♙","♙","♙","♙","♙"],
+["♖","♘","♗","♕","♔","♗","♘","♖"]
+];
+ranks.flat().forEach((piece,i)=>{
+const square=document.createElement("span");
+square.className="square "+((Math.floor(i/8)+i%8)%2===0?"light":"dark");
+square.textContent=piece;
+board.appendChild(square);
+});
+const toggle=document.getElementById("menuToggle");
+const links=document.getElementById("navLinks");
+toggle.addEventListener("click",()=>{
+const open=links.classList.toggle("open");
+toggle.setAttribute("aria-expanded",String(open));
+toggle.textContent=open?"×":"☰";
+});
+links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+links.classList.remove("open");
+toggle.setAttribute("aria-expanded","false");
+toggle.textContent="☰";
+}));
 </script>
 </body>
-</html>  
+</html>
